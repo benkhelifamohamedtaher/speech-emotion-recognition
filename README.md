@@ -1,3 +1,5 @@
+# Speech Emotion Recognition
+
 <div align="center">
   <h1>Deep Learning for Speech Emotion Analysis</h1>
   <h3>Achieving 50.5% Accuracy on 8-Class Emotion Classification</h3>
@@ -155,10 +157,32 @@ pip install -r requirements.txt
 ### Run the Interactive Demo
 
 ```bash
+# Run the real-time GUI
+./run_gui.sh
+
+# Or run the terminal-based demo
 python src/interactive_demo.py
 ```
 
 This will start a real-time speech emotion analyzer using your microphone input with live visualization.
+
+### Real-time Emotion Recognition GUI
+
+The project includes a modern graphical user interface for real-time emotion recognition:
+
+- **Automatic Model Loading**: Starts with the best performing model (50.5% accuracy)
+- **Live Emotion Visualization**: Shows probability distribution across all emotions
+- **Real-time Audio Waveform**: Displays your speech input as a waveform
+- **Emotion Classification**: Shows the current detected emotion with confidence score
+- **Flexible Settings**: Switch between simplified (4 emotions) and full (8 emotions) mode
+
+To run the GUI:
+
+```bash
+./run_gui.sh
+```
+
+![Real-time Emotion Recognition GUI](docs/images/gui_screenshot.png)
 
 ### Quick Verification
 
