@@ -76,27 +76,26 @@ This project uses the [RAVDESS dataset](https://zenodo.org/record/1188976) (Ryer
    # Create dataset directory
    mkdir -p dataset_raw
    cd dataset_raw
-   
-   # Download BOTH required files from Zenodo (record 1188976)
-   # 1. Audio Speech file (208.5 MB)
-   wget https://zenodo.org/record/1188976/files/Audio_Speech_Actors_01-24.zip
-   
-   # You may also download the Audio Song file if needed (225.5 MB)
-   # wget https://zenodo.org/record/1188976/files/Audio_Song_Actors_01-24.zip
    ```
-
-2. **Extract the Dataset**:
-   ```bash
-   # Extract the Audio Speech file
-   unzip Audio_Speech_Actors_01-24.zip
    
-   # This will create a folder structure with Actor_01 through Actor_24 directories
-   # Each actor folder contains multiple audio files with emotions
-   # Return to project root
-   cd ..
-   ```
+   **Option A: Download Everything at Once (Recommended)**
+   - Visit the [RAVDESS dataset page on Zenodo](https://zenodo.org/record/1188976)
+   - Click the "Download all" button in the top right corner
+   - Save the downloaded file (1188976.zip, approximately 25.6 GB)
+   - Extract the zip file:
+     ```bash
+     unzip 1188976.zip
+     ```
+   
+   **Option B: Download Individual Files**
+   - If you only need the audio speech data:
+     ```bash
+     # Download only the Audio Speech file (208.5 MB)
+     wget https://zenodo.org/record/1188976/files/Audio_Speech_Actors_01-24.zip
+     unzip Audio_Speech_Actors_01-24.zip
+     ```
 
-3. **Verify Dataset Structure**:
+2. **Verify Dataset Structure**:
    The extracted dataset should have the following structure:
    ```
    dataset_raw/
@@ -111,8 +110,11 @@ This project uses the [RAVDESS dataset](https://zenodo.org/record/1188976) (Ryer
        └── ... (Actor_03 through Actor_24 folders)
    ```
 
-4. **Process the Dataset for Training**:
+3. **Process the Dataset for Training**:
    ```bash
+   # Return to project root first if needed
+   cd ..
+   
    # Run the dataset preparation script
    python src/prepare_ravdess.py \
      --dataset_path dataset_raw/Audio_Speech_Actors_01-24 \
@@ -122,7 +124,7 @@ This project uses the [RAVDESS dataset](https://zenodo.org/record/1188976) (Ryer
      --test_ratio 0.15
    ```
 
-5. **Verify Processed Dataset**:
+4. **Verify Processed Dataset**:
    ```bash
    # Check processed dataset structure
    ls -la processed_dataset
@@ -146,7 +148,7 @@ RAVDESS audio files follow this naming convention:
 
 Our processing script handles this naming convention automatically to extract emotions and organize files.
 
-> **IMPORTANT**: The raw dataset (~250MB) and processed audio files are deliberately excluded from this repository due to their size. You must follow the steps above to prepare the dataset locally.
+> **IMPORTANT**: The raw dataset (~25.6GB) and processed audio files are deliberately excluded from this repository due to their size. You must follow the steps above to prepare the dataset locally.
 
 ## 💾 Handling Model Files
 
