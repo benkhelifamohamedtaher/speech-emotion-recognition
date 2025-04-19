@@ -1,5 +1,3 @@
-# Speech Emotion Recognition
-
 <div align="center">
   <h1>Deep Learning for Speech Emotion Analysis</h1>
   <h3>Achieving 50.5% Accuracy on 8-Class Emotion Classification</h3>
