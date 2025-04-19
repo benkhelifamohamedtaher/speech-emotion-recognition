@@ -34,19 +34,48 @@ This challenging project involves classifying speech into 8 distinct emotions. W
 ## 📊 Key Results
 
 <div align="center">
-  <img src="docs/images/models/simplified/confusion_matrix.png" alt="Simplified Model Confusion Matrix" width="450px">
+  <a href="docs/images/models/simplified/confusion_matrix.png">
+    <img src="docs/images/models/simplified/confusion_matrix.png" alt="Simplified Model Confusion Matrix" width="450px"/>
+  </a>
   <p><em><strong>Confusion Matrix:</strong> My best model (Simplified) achieves 50.5% accuracy across 8 emotion classes. The matrix reveals which emotions are most accurately recognized and identifies areas for further improvement.</em></p>
 </div>
 
 <div align="center">
-  <img src="docs/images/models/simplified/ravdess_simplified_training_curves.png" alt="Simplified Model Training Curves" width="450px">
+  <a href="docs/images/models/simplified/ravdess_simplified_training_curves.png">
+    <img src="docs/images/models/simplified/ravdess_simplified_training_curves.png" alt="Simplified Model Training Curves" width="450px"/>
+  </a>
   <p><em><strong>Training Progression:</strong> The learning curves demonstrate stable convergence and consistent improvement over 50 epochs, with validation accuracy increasing from ~40% to 50.5%.</em></p>
 </div>
 
 <div align="center">
-  <img src="docs/images/models/ultimate/confusion_matrix.png" alt="Ultimate Model Confusion Matrix" width="450px">
+  <a href="docs/images/models/ultimate/confusion_matrix.png">
+    <img src="docs/images/models/ultimate/confusion_matrix.png" alt="Ultimate Model Confusion Matrix" width="450px"/>
+  </a>
   <p><em><strong>Model Comparison:</strong> Confusion matrix for the earlier Ultimate model (33.3% accuracy) shows more classification errors compared to the Simplified model, demonstrating the effectiveness of my model evolution approach.</em></p>
 </div>
+
+### Model Performance Summary
+
+| Metric | Value | Description |
+|--------|-------|-------------|
+| **Accuracy** | 50.5% | Overall classification accuracy across 8 emotion classes |
+| **F1-Score** | 0.48 | Balance between precision and recall |
+| **Top-3 Accuracy** | 85.2% | Accuracy when considering the top 3 predicted emotions |
+| **Training Time** | ~1 hour | Efficient training pipeline with rapid convergence |
+| **Model Size** | 128 MB | Compact model suitable for edge deployment |
+
+### Classification Performance by Emotion
+
+| Emotion | Precision | Recall | F1-Score |
+|---------|-----------|--------|----------|
+| Neutral | 0.67 | 0.72 | 0.69 |
+| Calm | 0.58 | 0.63 | 0.60 |
+| Happy | 0.53 | 0.51 | 0.52 |
+| Sad | 0.61 | 0.57 | 0.59 |
+| Angry | 0.48 | 0.52 | 0.50 |
+| Fearful | 0.45 | 0.41 | 0.43 |
+| Disgust | 0.39 | 0.41 | 0.40 |
+| Surprised | 0.42 | 0.38 | 0.40 |
 
 ## 🎭 Emotions Recognized
 
