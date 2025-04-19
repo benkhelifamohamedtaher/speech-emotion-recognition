@@ -1,8 +1,8 @@
 # Speech Emotion Recognition
 
 <div align="center">
-  <img src="docs/images/emotion_probabilities.png" alt="Speech Emotion Recognition" width="600px" style="max-width: 100%;">
-  <p><strong>Advanced Deep Learning System for Real-Time Speech Emotion Analysis</strong></p>
+  <h1>Deep Learning for Speech Emotion Analysis</h1>
+  <h3>Achieving 50.5% Accuracy on 8-Class Emotion Classification</h3>
 </div>
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
@@ -30,6 +30,23 @@ This challenging project involves classifying speech into 8 distinct emotions. W
 - Created a real-time inference system for live emotion analysis
 - Developed a custom dataset preprocessing pipeline for the RAVDESS dataset
 - Authored detailed documentation and visualization tools
+
+## 📊 Key Results
+
+<div align="center">
+  <img src="docs/images/models/simplified/confusion_matrix.png" alt="Simplified Model Confusion Matrix" width="450px">
+  <p><em><strong>Confusion Matrix:</strong> My best model (Simplified) achieves 50.5% accuracy across 8 emotion classes. The matrix reveals which emotions are most accurately recognized and identifies areas for further improvement.</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/models/simplified/ravdess_simplified_training_curves.png" alt="Simplified Model Training Curves" width="450px">
+  <p><em><strong>Training Progression:</strong> The learning curves demonstrate stable convergence and consistent improvement over 50 epochs, with validation accuracy increasing from ~40% to 50.5%.</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/emotion_distribution.png" alt="Emotion Distribution" width="400px">
+  <p><em><strong>Dataset Composition:</strong> Distribution of emotions in the RAVDESS dataset used for training, showing the balance across emotion categories that adds to the classification challenge.</em></p>
+</div>
 
 ## 🎭 Emotions Recognized
 
@@ -184,6 +201,45 @@ If you want to use my pre-trained models, you can train them yourself following 
 - **Advanced Data Augmentation**: Time stretching, pitch shifting, and spectral augmentations
 - **Gradient Checkpointing**: Memory-efficient training for large models
 
+## 🔬 Technical Implementation
+
+### Architecture Evolution
+
+My development process involved creating and refining several model architectures:
+
+1. **Base Model (29.7% accuracy)**
+   - Convolutional layers for feature extraction
+   - Simple recurrent layers for temporal modeling
+   - Basic spectrogram features
+
+2. **Enhanced Model (31.5% accuracy)**
+   - Added attention mechanisms for context awareness
+   - Deeper convolutional feature extraction
+   - Improved batch normalization strategy
+
+3. **Ultimate Model (33.3% accuracy)**
+   - Full transformer architecture
+   - Complex multi-head attention mechanisms
+   - Advanced feature fusion techniques
+   - Resource-intensive but limited generalization
+
+4. **Simplified Model (50.5% accuracy)** ✅
+   - Focused architecture with 4 transformer layers
+   - 8 attention heads with 256 feature dimensions
+   - Robust error handling and training stability
+   - Efficient batch processing with optimal hyperparameters
+
+The simplified model proved that architectural focus and training stability were more important than complexity for this task.
+
+### Error Analysis
+
+Analyzing the confusion matrix revealed:
+- "Happy" and "Surprised" emotions are the most challenging to distinguish
+- "Neutral" and "Calm" have significant overlap (expected due to similarity)
+- "Angry" and "Fearful" are more accurately classified than other emotions
+
+These insights informed targeted improvements in feature extraction and model design.
+
 ## 📈 Model Development Journey
 
 This project showcases my iterative approach to deep learning model development:
@@ -229,32 +285,6 @@ My newest simplified model achieves the best performance to date with **50.5%** 
 - Batch normalization and residual connections for stable training
 - Efficient implementation without compromising accuracy
 
-## 📊 Results Visualization
-
-### Best Model: Simplified (50.5% Accuracy)
-
-<div align="center">
-  <img src="docs/images/models/simplified/confusion_matrix.png" alt="Simplified Model Confusion Matrix" width="450px">
-  <p><em>Confusion matrix for my best model (Simplified) achieving 50.5% accuracy across 8 emotion classes</em></p>
-</div>
-
-<div align="center">
-  <img src="docs/images/models/simplified/ravdess_simplified_training_curves.png" alt="Simplified Model Training Curves" width="450px">
-  <p><em>Training and validation curves for the Simplified model showing stable convergence</em></p>
-</div>
-
-### Model Comparison
-
-<div align="center">
-  <img src="docs/images/models/ultimate/confusion_matrix.png" alt="Ultimate Model Confusion Matrix" width="400px">
-  <p><em>Confusion matrix for the Ultimate model (33.3% accuracy) showing more class confusion</em></p>
-</div>
-
-<div align="center">
-  <img src="docs/images/emotion_distribution.png" alt="Emotion Distribution" width="400px">
-  <p><em>Distribution of emotions in the RAVDESS dataset used for training</em></p>
-</div>
-
 ## 🔧 Training Your Own Model
 
 ```bash
@@ -271,6 +301,15 @@ python src/train_simplified.py \
 # For quick training, use the optimal script
 bash train_optimal.sh
 ```
+
+## 🛠️ Tools and Technologies
+
+- **Languages**: Python 3.8+
+- **Deep Learning Frameworks**: PyTorch 1.7+, TensorFlow 2.4+
+- **Audio Processing**: Librosa, PyAudio, SoundFile
+- **Data Science**: NumPy, Matplotlib, scikit-learn
+- **Visualization**: TensorBoard, Matplotlib, Plotly
+- **Development Tools**: Git, Docker
 
 ## 🤝 Contributing
 
