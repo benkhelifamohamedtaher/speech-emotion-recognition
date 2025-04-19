@@ -9,6 +9,9 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4%2B-orange.svg)](https://tensorflow.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CI Status](https://github.com/vatsalmehta/speech-emotion-recognition/actions/workflows/ci.yml/badge.svg)](https://github.com/vatsalmehta/speech-emotion-recognition/actions)
+[![GitHub stars](https://img.shields.io/github/stars/vatsalmehta/speech-emotion-recognition?style=social)](https://github.com/vatsalmehta/speech-emotion-recognition/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/vatsalmehta/speech-emotion-recognition?style=social)](https://github.com/vatsalmehta/speech-emotion-recognition/network/members)
 
 ## 👤 About this Project
 
@@ -459,3 +462,59 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The RAVDESS dataset creators for providing high-quality emotional speech data
 - The PyTorch and torchaudio teams for their excellent frameworks
 - The research community for advancing speech emotion recognition techniques
+
+## 🎮 Try It Yourself
+
+### Interactive Demo
+
+You can try an interactive version of this emotion recognition system online:
+
+```bash
+# Coming soon - Streamlit or Hugging Face Spaces demo
+```
+
+I'm currently working on deploying an interactive demo using Streamlit that will allow you to:
+- Upload your own audio files for emotion analysis
+- Compare results across different model architectures
+- Visualize the decision-making process in real-time
+
+Check back soon or [contact me](https://github.com/vatsalmehta) for early access!
+
+### Installation Options
+
+For those who prefer a local installation, I've provided multiple ways to run the project:
+
+1. **Docker Container** (easiest, no dependency issues):
+   ```bash
+   docker pull vatsalmehta/emotion-recognition:latest
+   docker run -p 8501:8501 vatsalmehta/emotion-recognition:latest
+   ```
+
+2. **Python Virtual Environment** (recommended for developers):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+## 🚀 Further Development
+
+I'm actively improving this project with several exciting directions:
+
+- **Cross-cultural emotion detection**: Training on multilingual datasets to improve performance across different languages and accents
+- **Multimodal analysis**: Combining audio features with facial expressions for more accurate emotion detection
+- **Edge deployment**: Optimizing models for mobile and IoT devices
+- **Emotion tracking over time**: Analyzing emotional progression throughout conversations
+
+If you're interested in collaborating on any of these features, please reach out!
+
+## 📬 Contact & Connect
+
+I'm always open to collaboration, feedback, or questions about this project:
+
+- **LinkedIn**: [Vatsal Mehta](https://linkedin.com/in/vatsalmehta)
+- **GitHub**: [@vatsalmehta](https://github.com/vatsalmehta)
+- **Email**: your.email@example.com (replace with your actual email)
+- **Portfolio**: [vatsalmehta.com](https://vatsalmehta.com)
+
+Whether you're interested in machine learning collaboration, have questions about emotion recognition, or just want to connect with a fellow ML engineer, don't hesitate to reach out!
