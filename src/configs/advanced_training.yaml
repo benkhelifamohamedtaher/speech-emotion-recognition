@@ -1,0 +1,53 @@
+# Configuration for advanced training of speech emotion recognition model
+
+# Dataset configuration
+dataset:
+  dataset_root: "/path/to/dataset"  # Will be overridden by command line
+  sample_rate: 16000
+  max_length: 10  # in seconds
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+# Model configuration
+model:
+  model_name: "facebook/wav2vec2-base-960h"
+  use_enhanced_model: true
+  unfreeze_encoder_epoch: 2  # Start with encoder frozen for 2 epochs
+
+# Training configuration
+training:
+  seed: 42
+  batch_size: 16  # Will be overridden if provided in command line
+  epochs: 20  # Will be overridden if provided in command line
+  learning_rate: 2.0e-5  # Will be overridden if provided in command line
+  weight_decay: 1.0e-4
+  clip_grad: 1.0  # Gradient clipping norm
+  fp16_training: false  # Will be overridden if provided in command line
+
+# Logging configuration
+logging:
+  checkpoint_dir: "checkpoints"  # Will be overridden if provided in command line
+  log_interval: 10  # Log training metrics every 10 batches
+  eval_interval: 1  # Evaluate on validation set every epoch
+  checkpoint_interval: 5  # Save checkpoint every 5 epochs
+
+# Scheduler configuration
+scheduler:
+  scheduler_type: "cosine"  # Options: linear, cosine, onecycle
+  warmup_steps: 500
+
+# Advanced training features
+advanced:
+  # EMA (Exponential Moving Average)
+  ema_decay: 0.999  # Set to 0 to disable
+  
+  # Early stopping
+  early_stopping_patience: 5  # Set to 0 to disable
+  
+  # Data augmentation options
+  pitch_shift: true  # Randomly shift pitch
+  time_stretch: true  # Randomly stretch time
+  add_noise: true  # Add random noise
+  time_mask: true  # Apply time masking
+  freq_mask: false  # Apply frequency masking 

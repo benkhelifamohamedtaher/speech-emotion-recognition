@@ -1,0 +1,62 @@
+# Large data directories
+dataset/
+dataset_raw/
+processed_dataset/
+models/
+outputs/
+**/datasets/
+**/__pycache__/
+
+# Large files
+*.wav
+*.mp3
+*.zip
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.gz
+*.tar
+
+# Log files
+logs/
+*.log
+tensorboard_test/
+
+# OS specific files
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+tmp/
+temp/ 

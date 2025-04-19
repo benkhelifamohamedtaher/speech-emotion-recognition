@@ -1,0 +1,7 @@
+The following directories were excluded from Git due to their size:
+  - dataset:  26G
+  - dataset_raw:  25G
+  - processed_dataset: 341M
+  - models:  12G
+  - outputs: 2.1G
+  - tensorboard_test:  64K

@@ -1,0 +1,22 @@
+# Core dependencies
+torch>=1.7.0
+torchaudio>=0.7.0
+transformers>=4.18.0
+numpy>=1.19.0
+matplotlib>=3.3.0
+
+# Audio processing
+librosa>=0.8.0
+pyaudio>=0.2.11
+soundfile>=0.10.3
+
+# Machine learning utilities
+scikit-learn>=0.24.0
+tqdm>=4.50.0
+
+# Visualization
+tensorboard>=2.5.0
+
+# Utilities
+pyyaml>=5.4.0
+pillow>=8.0.0 
