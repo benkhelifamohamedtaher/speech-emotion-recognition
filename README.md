@@ -1,5 +1,5 @@
 # Deep Learning for Speech Emotion Analysis
-### Achieving 50.5% Accuracy on 8-Class Emotion Classification
+### 50.5% Accuracy on 8-Class Emotion Classification
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
