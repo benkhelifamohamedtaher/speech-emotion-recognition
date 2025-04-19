@@ -513,8 +513,8 @@ If you're interested in collaborating on any of these features, please reach out
 I'm always open to collaboration, feedback, or questions about this project:
 
 - **LinkedIn**: [Vatsal Mehta](https://linkedin.com/in/vatsalmehta)
-- **GitHub**: [@vatsalmehta](https://github.com/vatsalmehta)
-- **Email**: your.email@example.com (replace with your actual email)
+- **GitHub**: [@vatsalmehta2001](https://github.com/vatsalmehta2001)
+- **Email**: vatsalmehta1906@gmail.com
 - **Portfolio**: [vatsalmehta.com](https://vatsalmehta.com)
 
 Whether you're interested in machine learning collaboration, have questions about emotion recognition, or just want to connect with a fellow ML engineer, don't hesitate to reach out!
