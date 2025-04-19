@@ -3,15 +3,12 @@
 <div align="center">
   <h1>Deep Learning for Speech Emotion Analysis</h1>
   <h3>Achieving 50.5% Accuracy on 8-Class Emotion Classification</h3>
-</div>
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4%2B-orange.svg)](https://tensorflow.org/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![CI Status](https://github.com/vatsalmehta/speech-emotion-recognition/actions/workflows/ci.yml/badge.svg)](https://github.com/vatsalmehta/speech-emotion-recognition/actions)
-[![GitHub stars](https://img.shields.io/github/stars/vatsalmehta/speech-emotion-recognition?style=social)](https://github.com/vatsalmehta/speech-emotion-recognition/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/vatsalmehta/speech-emotion-recognition?style=social)](https://github.com/vatsalmehta/speech-emotion-recognition/network/members)
+  [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+  [![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
+  [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4%2B-orange.svg)](https://tensorflow.org/)
+  [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+</div>
 
 ## 👤 About this Project
 
@@ -515,6 +512,6 @@ I'm always open to collaboration, feedback, or questions about this project:
 - **LinkedIn**: [Vatsal Mehta](https://linkedin.com/in/vatsalmehta)
 - **GitHub**: [@vatsalmehta2001](https://github.com/vatsalmehta2001)
 - **Email**: vatsalmehta1906@gmail.com
-- **Portfolio**: [vatsalmehta.com](https://vatsalmehta.com)
+- **Portfolio**: [vatsalmehta2001.github.io](https://vatsalmehta2001.github.io)
 
 Whether you're interested in machine learning collaboration, have questions about emotion recognition, or just want to connect with a fellow ML engineer, don't hesitate to reach out!
