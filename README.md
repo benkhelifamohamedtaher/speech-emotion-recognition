@@ -76,21 +76,21 @@ weighted avg     0.52      0.51      0.50       320
 
 This project features a comprehensive series of Jupyter notebooks documenting my iterative model development process:
 
-### 📓 [Base Model (29.7% Accuracy)](docs/notebooks/04_Base_Model.py)
+### 📓 [Base Model (29.7% Accuracy)](docs/notebooks/04_Base_Model.ipynb)
 My initial CNN-based approach established a strong baseline with:
 - Convolutional layers for feature extraction from mel spectrograms
 - Recurrent neural networks (GRU) for temporal sequence modeling
 - Basic data augmentation techniques for improved generalization
 - Identified key challenges for speech emotion recognition
 
-### 📓 [Enhanced Model (31.5% Accuracy)](docs/notebooks/05_Enhanced_Model.py)
+### 📓 [Enhanced Model (31.5% Accuracy)](docs/notebooks/05_Enhanced_Model.ipynb)
 Building on the base model, I incorporated:
 - Self-attention mechanisms to focus on emotionally salient parts of speech
 - Deeper convolutional blocks with residual connections
 - Improved regularization techniques including dropout and batch normalization
 - Advanced learning rate scheduling with cosine annealing
 
-### 📓 [Ultimate Model (33.3% Accuracy)](docs/notebooks/06_Ultimate_Model.py)
+### 📓 [Ultimate Model (33.3% Accuracy)](docs/notebooks/06_Ultimate_Model.ipynb)
 This complex architecture pushed the boundaries with:
 - Multi-modal feature extraction combining MFCCs, mel spectrograms, and spectral features
 - Full transformer architecture with multi-head self-attention
@@ -98,7 +98,7 @@ This complex architecture pushed the boundaries with:
 - Complex learning schedule with warmup and cosine annealing
 - 5-hour training time yielding only modest gains
 
-### 📓 [Simplified Model (50.5% Accuracy)](docs/notebooks/07_Simplified_Model.py)
+### 📓 [Simplified Model (50.5% Accuracy)](docs/notebooks/07_Simplified_Model.ipynb)
 My best-performing model proved that focused architectural design beats complexity:
 - Streamlined model with 4 transformer layers and 8 attention heads
 - Focused feature extraction with optimal dimensionality (256 features)
@@ -273,27 +273,27 @@ My development process involved creating and refining several model architecture
    - Convolutional layers for feature extraction
    - Simple recurrent layers for temporal modeling
    - Basic spectrogram features
-   - Detailed in [04_Base_Model.py](docs/notebooks/04_Base_Model.py)
+   - Detailed in [04_Base_Model.ipynb](docs/notebooks/04_Base_Model.ipynb)
 
 2. **Enhanced Model (31.5% accuracy)**
    - Added attention mechanisms for context awareness
    - Deeper convolutional feature extraction
    - Improved batch normalization strategy
-   - Detailed in [05_Enhanced_Model.py](docs/notebooks/05_Enhanced_Model.py)
+   - Detailed in [05_Enhanced_Model.ipynb](docs/notebooks/05_Enhanced_Model.ipynb)
 
 3. **Ultimate Model (33.3% accuracy)**
    - Full transformer architecture
    - Complex multi-head attention mechanisms
    - Advanced feature fusion techniques
    - Resource-intensive but limited generalization
-   - Detailed in [06_Ultimate_Model.py](docs/notebooks/06_Ultimate_Model.py)
+   - Detailed in [06_Ultimate_Model.ipynb](docs/notebooks/06_Ultimate_Model.ipynb)
 
 4. **Simplified Model (50.5% accuracy)** ✅
    - Focused architecture with 4 transformer layers
    - 8 attention heads with 256 feature dimensions
    - Robust error handling and training stability
    - Efficient batch processing with optimal hyperparameters
-   - Detailed in [07_Simplified_Model.py](docs/notebooks/07_Simplified_Model.py)
+   - Detailed in [07_Simplified_Model.ipynb](docs/notebooks/07_Simplified_Model.ipynb)
 
 The simplified model proved that architectural focus and training stability were more important than complexity for this task.
 
