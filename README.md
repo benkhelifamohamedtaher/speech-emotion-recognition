@@ -1,7 +1,7 @@
 # Real-Time Speech Emotion Recognition
 
 <div align="center">
-  <img src="docs/images/emotion_recognition_header.png" alt="Speech Emotion Recognition" width="600px" style="max-width: 100%;">
+  <img src="docs/images/emotion_probabilities.png" alt="Speech Emotion Recognition" width="600px" style="max-width: 100%;">
   <p><strong>Advanced Deep Learning System for Real-Time Speech Emotion Analysis</strong></p>
 </div>
 
@@ -150,47 +150,18 @@ Our processing script handles this naming convention automatically to extract em
 
 > **IMPORTANT**: The raw dataset (~25.6GB) and processed audio files are deliberately excluded from this repository due to their size. You must follow the steps above to prepare the dataset locally.
 
-## 💾 Handling Model Files
+## 💾 Model Files
 
-Pre-trained models exceed GitHub's file size limits. Use one of these approaches:
+Pre-trained models are not included in this repository due to their large size. After training your own models using the instructions below, they will be saved in the `models/` directory.
 
-### Option 1: Git LFS (Recommended)
+To use a specific model for inference:
 
-1. **Install Git LFS**:
-   ```bash
-   # On macOS with Homebrew
-   brew install git-lfs
-   
-   # On Ubuntu/Debian
-   sudo apt-get install git-lfs
-   
-   # On Windows
-   # Download from https://git-lfs.github.com
-   ```
+```bash
+# Run inference with your trained model
+python src/inference.py --model_path models/ravdess_simple/best_model.pt
+```
 
-2. **Setup Git LFS in your repository**:
-   ```bash
-   # Initialize Git LFS
-   git lfs install
-   
-   # Track large model files
-   git lfs track "models/ravdess_simple/*.pt"
-   git lfs track "models/ravdess_ultimate/*.pt"
-   
-   # Commit the .gitattributes file
-   git add .gitattributes
-   git commit -m "Configure Git LFS tracking"
-   ```
-
-### Option 2: Download Models (Alternative)
-
-If you don't want to use Git LFS, pre-trained models can be downloaded separately:
-- Best performing model (50.5% accuracy): [Download Link](https://huggingface.co/datasets/yourname/speech-emotion-models/resolve/main/ravdess_simple_best_model.pt)
-- Place downloaded models in the appropriate directory (create if needed):
-  ```bash
-  mkdir -p models/ravdess_simple
-  mv downloaded_model.pt models/ravdess_simple/best_model.pt
-  ```
+If you want to use our pre-trained models, you can train them yourself following the training instructions below or contact the repository owner for access to the pre-trained files.
 
 ## 💻 Features
 
@@ -388,6 +359,11 @@ If the project doesn't seem to find certain files or directories:
   <p><em>Confusion matrix showing the model's performance across 8 emotion classes</em></p>
 </div>
 
+<div align="center">
+  <img src="docs/images/emotion_distribution.png" alt="Emotion Distribution" width="400px">
+  <p><em>Distribution of emotions in the RAVDESS dataset</em></p>
+</div>
+
 ## 🔗 References
 
 1. [RAVDESS Dataset](https://zenodo.org/record/1188976)
@@ -404,7 +380,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The RAVDESS dataset creators for providing high-quality emotional speech data
 - The PyTorch and torchaudio teams for their excellent frameworks
 - The research community for advancing speech emotion recognition techniques
-
-## 📞 Contact
-
-If you have any questions or feedback, please open an issue in this repository. 
