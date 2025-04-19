@@ -354,14 +354,28 @@ If the project doesn't seem to find certain files or directories:
 
 ## 📊 Results Visualization
 
+### Best Model: Simplified (50.5% Accuracy)
+
 <div align="center">
-  <img src="docs/images/confusion_matrix.png" alt="Confusion Matrix" width="400px">
-  <p><em>Confusion matrix showing the model's performance across 8 emotion classes</em></p>
+  <img src="docs/images/models/simplified/confusion_matrix.png" alt="Simplified Model Confusion Matrix" width="450px">
+  <p><em>Confusion matrix for our best model (Simplified) achieving 50.5% accuracy across 8 emotion classes</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/models/simplified/ravdess_simplified_training_curves.png" alt="Simplified Model Training Curves" width="450px">
+  <p><em>Training and validation curves for the Simplified model showing stable convergence</em></p>
+</div>
+
+### Model Comparison
+
+<div align="center">
+  <img src="docs/images/models/ultimate/confusion_matrix.png" alt="Ultimate Model Confusion Matrix" width="400px">
+  <p><em>Confusion matrix for the Ultimate model (33.3% accuracy) showing more class confusion</em></p>
 </div>
 
 <div align="center">
   <img src="docs/images/emotion_distribution.png" alt="Emotion Distribution" width="400px">
-  <p><em>Distribution of emotions in the RAVDESS dataset</em></p>
+  <p><em>Distribution of emotions in the RAVDESS dataset used for training</em></p>
 </div>
 
 ## 🔗 References
