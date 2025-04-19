@@ -403,6 +403,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact & Connect
 
-- **LinkedIn**: [Vatsal Mehta](https://linkedin.com/in/vatsalmehta)
+- **LinkedIn**: [Vatsal Mehta](https://www.linkedin.com/in/vatsal-mehta-aa3a6219a/)
 - **GitHub**: [@vatsalmehta2001](https://github.com/vatsalmehta2001)
 - **Email**: vatsalmehta1906@gmail.com
