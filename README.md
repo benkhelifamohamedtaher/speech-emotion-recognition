@@ -1,14 +1,10 @@
-# Speech Emotion Recognition
+# Deep Learning for Speech Emotion Analysis
+### Achieving 50.5% Accuracy on 8-Class Emotion Classification
 
-<div align="center">
-  <h1>Deep Learning for Speech Emotion Analysis</h1>
-  <h3>Achieving 50.5% Accuracy on 8-Class Emotion Classification</h3>
-
-  [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-  [![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
-  [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4%2B-orange.svg)](https://tensorflow.org/)
-  [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-</div>
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4%2B-orange.svg)](https://tensorflow.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## 👤 About this Project
 
