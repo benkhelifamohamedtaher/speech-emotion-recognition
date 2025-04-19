@@ -44,8 +44,8 @@ This challenging project involves classifying speech into 8 distinct emotions. W
 </div>
 
 <div align="center">
-  <img src="docs/images/emotion_distribution.png" alt="Emotion Distribution" width="400px">
-  <p><em><strong>Dataset Composition:</strong> Distribution of emotions in the RAVDESS dataset used for training, showing the balance across emotion categories that adds to the classification challenge.</em></p>
+  <img src="docs/images/models/ultimate/confusion_matrix.png" alt="Ultimate Model Confusion Matrix" width="450px">
+  <p><em><strong>Model Comparison:</strong> Confusion matrix for the earlier Ultimate model (33.3% accuracy) shows more classification errors compared to the Simplified model, demonstrating the effectiveness of my model evolution approach.</em></p>
 </div>
 
 ## 🎭 Emotions Recognized
