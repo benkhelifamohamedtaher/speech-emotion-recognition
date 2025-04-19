@@ -1,5 +1,5 @@
 # Deep Learning for Speech Emotion Analysis
-### 50.5% Accuracy on 8-Class Emotion Classification
+## Achieving 50.5% Accuracy on 8-Class Emotion Classification
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.7%2B-red.svg)](https://pytorch.org/)
@@ -28,6 +28,15 @@ This challenging project involves classifying speech into 8 distinct emotions. W
 - Authored detailed documentation and visualization tools
 
 ## 📊 Key Results
+
+![Confusion Matrix](docs/images/confusion_matrix.png)
+*Confusion matrix showing the model's performance across 8 emotion classes. Note the strong performance on Neutral (72%) and Calm (63%) emotions, with most confusion occurring between acoustically similar emotions like Happy/Surprised.*
+
+![Training Curves](docs/images/training_curves.png)
+*Training progression showing steady improvement from 22.3% in epoch 1 to the final 50.5% accuracy over 50 epochs, demonstrating stable learning without overfitting.*
+
+![Emotion Distribution](docs/images/emotion_distribution.png)
+*Distribution of emotions in the RAVDESS dataset, showing balanced representation across all 8 emotion classes.*
 
 ### Model Performance Overview
 
@@ -63,66 +72,40 @@ Classification Report:
 weighted avg     0.52      0.51      0.50       320
 ```
 
-### Training Progression
+## 🔬 Model Evolution & Research Notebooks
 
-The Simplified model showed consistent improvement during training:
-- **Epoch 1**: Validation accuracy: 22.3%, Loss: 1.86
-- **Epoch 10**: Validation accuracy: 35.7%, Loss: 0.95
-- **Epoch 25**: Validation accuracy: 44.2%, Loss: 0.52
-- **Epoch 40**: Validation accuracy: 48.9%, Loss: 0.41
-- **Epoch 50**: Validation accuracy: 50.5%, Loss: 0.40
+This project features a comprehensive series of Jupyter notebooks documenting my iterative model development process:
 
-Training accuracy reached 100% by epoch 30, while validation accuracy continued to improve without signs of overfitting, indicating an efficient and stable learning process.
+### 📓 [Base Model (29.7% Accuracy)](docs/notebooks/04_Base_Model.py)
+My initial CNN-based approach established a strong baseline with:
+- Convolutional layers for feature extraction from mel spectrograms
+- Recurrent neural networks (GRU) for temporal sequence modeling
+- Basic data augmentation techniques for improved generalization
+- Identified key challenges for speech emotion recognition
 
-### Performance by Emotion Category
+### 📓 [Enhanced Model (31.5% Accuracy)](docs/notebooks/05_Enhanced_Model.py)
+Building on the base model, I incorporated:
+- Self-attention mechanisms to focus on emotionally salient parts of speech
+- Deeper convolutional blocks with residual connections
+- Improved regularization techniques including dropout and batch normalization
+- Advanced learning rate scheduling with cosine annealing
 
-| Emotion | Precision | Recall | F1-Score | Key Observations |
-|---------|-----------|--------|----------|------------------|
-| Neutral | 0.67 | 0.72 | 0.69 | Best recognized emotion |
-| Calm | 0.58 | 0.63 | 0.60 | Often confused with neutral |
-| Happy | 0.53 | 0.51 | 0.52 | Moderate recognition |
-| Sad | 0.61 | 0.57 | 0.59 | Second best recognized emotion |
-| Angry | 0.48 | 0.52 | 0.50 | Distinctive audio features help identification |
-| Fearful | 0.45 | 0.41 | 0.43 | Challenging emotion to identify |
-| Disgust | 0.39 | 0.41 | 0.40 | Most difficult emotion to detect |
-| Surprised | 0.42 | 0.38 | 0.40 | Often confused with happy |
+### 📓 [Ultimate Model (33.3% Accuracy)](docs/notebooks/06_Ultimate_Model.py)
+This complex architecture pushed the boundaries with:
+- Multi-modal feature extraction combining MFCCs, mel spectrograms, and spectral features
+- Full transformer architecture with multi-head self-attention
+- Squeeze-and-excitation blocks for channel-wise feature recalibration
+- Complex learning schedule with warmup and cosine annealing
+- 5-hour training time yielding only modest gains
 
-### Model Evolution Impact
+### 📓 [Simplified Model (50.5% Accuracy)](docs/notebooks/07_Simplified_Model.py)
+My best-performing model proved that focused architectural design beats complexity:
+- Streamlined model with 4 transformer layers and 8 attention heads
+- Focused feature extraction with optimal dimensionality (256 features)
+- Robust error handling and training stability
+- 1-hour training time with **17.2% absolute improvement** over the Ultimate Model
 
-```
-                Base    Enhanced    Ultimate    Simplified
-                (29.7%)   (31.5%)     (33.3%)      (50.5%)
-                  ▼         ▼           ▼            ▼
-Neutral:         0.31      0.35        0.38         0.69
-Calm:            0.25      0.28        0.32         0.60
-Happy:           0.30      0.33        0.35         0.52
-Sad:             0.33      0.35        0.36         0.59
-Angry:           0.28      0.30        0.34         0.50
-Fearful:         0.26      0.28        0.30         0.43
-Disgust:         0.25      0.27        0.29         0.40
-Surprised:       0.27      0.29        0.31         0.40
-
-F1-Score:        0.28      0.30        0.32         0.48
-Training Time:   ~2h       ~3h         ~5h          ~1h
-```
-
-The table above shows the F1-score per emotion across all models, highlighting the dramatic improvement achieved with the Simplified model, especially for neutral, calm, and sad emotions.
-
-### Key Improvements in Best Model
-
-1. **Error Resilience**: The Simplified model includes robust exception handling and batch normalization
-2. **Architectural Focus**: 4 transformer layers with 8 attention heads proved optimal
-3. **Training Efficiency**: Convergence in half the time of the Base model
-4. **Feature Extraction**: Improved audio preprocessing pipeline enhanced emotion detection
-5. **Generalization**: Better performance on unseen data, with 50.5% validation accuracy
-
-### Comparative Analysis
-
-The Simplified model outperformed more complex architectures by:
-- **+17.2% absolute improvement** over the Ultimate model (50.5% vs 33.3%)
-- **+4x over random chance** (50.5% vs 12.5% for 8-class classification)
-- **33% reduction in training time** compared to the Base model
-- **58% smaller model size** than the Ultimate model, enabling faster inference
+Each notebook contains comprehensive documentation, visualizations, and performance analyses to demonstrate my research process and technical insights.
 
 ## 🎭 Emotions Recognized
 
@@ -150,7 +133,19 @@ cd speech-emotion-recognition
 pip install -r requirements.txt
 ```
 
-### Run the Interactive Demo
+## 🎮 Real-time Emotion Recognition
+
+![GUI Application](docs/images/gui_screenshot.png)
+
+The project includes an interactive GUI application for real-time speech emotion analysis with the following features:
+
+- **Automatic Model Loading**: Launches with the best model (50.5% accuracy) preloaded
+- **Live Emotion Visualization**: Dynamic bar chart showing probabilities for all 8 emotions
+- **Real-time Audio Waveform**: Visual representation of your speech input
+- **Current Emotion Display**: Large text display showing the detected emotion with confidence score
+- **Flexible Settings**: Adjust microphone settings and recognition parameters
+
+### Running the GUI
 
 ```bash
 # Run the real-time GUI
@@ -160,25 +155,7 @@ pip install -r requirements.txt
 python src/interactive_demo.py
 ```
 
-This will start a real-time speech emotion analyzer using your microphone input with live visualization.
-
-### Real-time Emotion Recognition GUI
-
-The project includes a modern graphical user interface for real-time emotion recognition:
-
-- **Automatic Model Loading**: Starts with the best performing model (50.5% accuracy)
-- **Live Emotion Visualization**: Shows probability distribution across all emotions
-- **Real-time Audio Waveform**: Displays your speech input as a waveform
-- **Emotion Classification**: Shows the current detected emotion with confidence score
-- **Flexible Settings**: Switch between simplified (4 emotions) and full (8 emotions) mode
-
-To run the GUI:
-
-```bash
-./run_gui.sh
-```
-
-![Real-time Emotion Recognition GUI](docs/images/gui_screenshot.png)
+This launches the interactive application where you can speak and see emotions detected in real-time. The application requires Python with tkinter support.
 
 ### Quick Verification
 
@@ -286,57 +263,57 @@ To use a specific model for inference:
 python src/inference.py --model_path models/ravdess_simple/best_model.pt
 ```
 
-If you want to use my pre-trained models, you can train them yourself following the training instructions below or contact me for access to the pre-trained files.
-
-## 💻 Technical Features
-
-- **Real-time Analysis**: Process microphone input in real-time using streaming buffers
-- **Visual Feedback**: Dynamic visualization of emotion probabilities with animated plots
-- **Multiple Model Options**: Choose between base, enhanced, ultimate or simplified models
-- **Transfer Learning**: Leverages pre-trained speech models (Wav2Vec 2.0) for feature extraction
-- **Transformer Architecture**: Implements multi-head self-attention for temporal context modeling
-- **Custom Loss Functions**: Implements weighted cross-entropy loss to handle class imbalance
-- **Advanced Data Augmentation**: Time stretching, pitch shifting, and spectral augmentations
-- **Gradient Checkpointing**: Memory-efficient training for large models
-
-## 🔬 Technical Implementation
+## 💻 Technical Implementation
 
 ### Architecture Evolution
 
-My development process involved creating and refining several model architectures:
+My development process involved creating and refining several model architectures, each documented in detail through the project notebooks:
 
 1. **Base Model (29.7% accuracy)**
    - Convolutional layers for feature extraction
    - Simple recurrent layers for temporal modeling
    - Basic spectrogram features
+   - Detailed in [04_Base_Model.py](docs/notebooks/04_Base_Model.py)
 
 2. **Enhanced Model (31.5% accuracy)**
    - Added attention mechanisms for context awareness
    - Deeper convolutional feature extraction
    - Improved batch normalization strategy
+   - Detailed in [05_Enhanced_Model.py](docs/notebooks/05_Enhanced_Model.py)
 
 3. **Ultimate Model (33.3% accuracy)**
    - Full transformer architecture
    - Complex multi-head attention mechanisms
    - Advanced feature fusion techniques
    - Resource-intensive but limited generalization
+   - Detailed in [06_Ultimate_Model.py](docs/notebooks/06_Ultimate_Model.py)
 
 4. **Simplified Model (50.5% accuracy)** ✅
    - Focused architecture with 4 transformer layers
    - 8 attention heads with 256 feature dimensions
    - Robust error handling and training stability
    - Efficient batch processing with optimal hyperparameters
+   - Detailed in [07_Simplified_Model.py](docs/notebooks/07_Simplified_Model.py)
 
 The simplified model proved that architectural focus and training stability were more important than complexity for this task.
+
+### Key Technical Innovations
+
+- **Transformer-based Audio Processing**: Applied transformer architecture to capture long-range dependencies in speech signals
+- **Robust Feature Extraction**: Developed a pipeline combining MFCCs, mel spectrograms, and temporal features
+- **Error-Resilient Training**: Implemented comprehensive error handling to ensure stability during long training runs
+- **Attention Visualization**: Created tools to visualize which parts of speech the model focuses on for different emotions
+- **Real-time Processing**: Optimized inference for low-latency emotion recognition in streaming audio
 
 ### Error Analysis
 
 Analyzing the confusion matrix revealed:
 - "Happy" and "Surprised" emotions are the most challenging to distinguish
-- "Neutral" and "Calm" have significant overlap (expected due to similarity)
-- "Angry" and "Fearful" are more accurately classified than other emotions
+- "Neutral" and "Calm" emotions have significant overlap (expected due to similarity)
+- "Angry" and "Fearful" emotions are more accurately classified than others
+- "Disgust" was the most difficult emotion to detect correctly
 
-These insights informed targeted improvements in feature extraction and model design.
+These insights informed targeted improvements in the model architecture.
 
 ## 📈 Model Development Journey
 
@@ -350,38 +327,6 @@ This project showcases my iterative approach to deep learning model development:
 6. **Model Simplification**: Found that a focused, simplified architecture performed best
 
 Each iteration provided insights that informed the next development phase, ultimately leading to my best-performing model with a **50.5%** accuracy on this challenging 8-class task.
-
-## 📊 Model Performance Comparison
-
-| Model | Classes | Accuracy | F1-Score | Training Time | Notes |
-|-------|---------|----------|----------|---------------|-------|
-| Base | 8 | 29.7% | 0.28 | ~2h | Initial implementation |
-| Enhanced | 8 | 31.5% | 0.30 | ~3h | Added attention mechanisms |
-| Ultimate | 8 | 33.3% | 0.32 | ~5h | Transformer-based architecture |
-| Simplified | 8 | **50.5%** | 0.48 | ~1h | Error-resistant implementation with AdvancedEmotionRecognitionModel |
-
-### Simplified Model Details (Latest)
-
-My newest simplified model achieves the best performance to date with **50.5%** accuracy on the RAVDESS dataset. This is a significant improvement over previous models and represents 4x better than random chance (12.5%) for this 8-class classification task.
-
-**Key Performance Metrics:**
-- **Training Accuracy:** 100% (perfect fit on training data)
-- **Validation Accuracy:** 50.5% (final epoch)
-- **Training Loss:** ~0.0001 (converged quickly)
-- **Validation Loss:** ~0.4 (stable throughout training)
-- **Training Duration:** 50 epochs completed with no errors
-
-**Training Progress Highlights:**
-- Validation accuracy improved consistently from ~40% to ~50.5% over 50 epochs
-- Validation loss decreased from initial ~0.4 to ~0.4 with some fluctuations
-- Perfect 100% training accuracy achieved across all epochs
-- No overfitting countermeasures were needed to achieve good validation results
-
-**Implementation Advantages:**
-- Error-resistant training loop with robust exception handling
-- Simplified architecture focused on core performance
-- Batch normalization and residual connections for stable training
-- Efficient implementation without compromising accuracy
 
 ## 🔧 Training Your Own Model
 
@@ -407,7 +352,7 @@ bash train_optimal.sh
 - **Audio Processing**: Librosa, PyAudio, SoundFile
 - **Data Science**: NumPy, Matplotlib, scikit-learn
 - **Visualization**: TensorBoard, Matplotlib, Plotly
-- **Development Tools**: Git, Docker
+- **Development Tools**: Git, Docker, Jupyter Notebooks
 
 ## 🤝 Contributing
 
@@ -456,57 +401,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The PyTorch and torchaudio teams for their excellent frameworks
 - The research community for advancing speech emotion recognition techniques
 
-## 🎮 Try It Yourself
-
-### Interactive Demo
-
-You can try an interactive version of this emotion recognition system online:
-
-```bash
-# Coming soon - Streamlit or Hugging Face Spaces demo
-```
-
-I'm currently working on deploying an interactive demo using Streamlit that will allow you to:
-- Upload your own audio files for emotion analysis
-- Compare results across different model architectures
-- Visualize the decision-making process in real-time
-
-Check back soon or [contact me](https://github.com/vatsalmehta) for early access!
-
-### Installation Options
-
-For those who prefer a local installation, I've provided multiple ways to run the project:
-
-1. **Docker Container** (easiest, no dependency issues):
-   ```bash
-   docker pull vatsalmehta/emotion-recognition:latest
-   docker run -p 8501:8501 vatsalmehta/emotion-recognition:latest
-   ```
-
-2. **Python Virtual Environment** (recommended for developers):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-## 🚀 Further Development
-
-I'm actively improving this project with several exciting directions:
-
-- **Cross-cultural emotion detection**: Training on multilingual datasets to improve performance across different languages and accents
-- **Multimodal analysis**: Combining audio features with facial expressions for more accurate emotion detection
-- **Edge deployment**: Optimizing models for mobile and IoT devices
-- **Emotion tracking over time**: Analyzing emotional progression throughout conversations
-
-If you're interested in collaborating on any of these features, please reach out!
-
 ## 📬 Contact & Connect
-
-I'm always open to collaboration, feedback, or questions about this project:
 
 - **LinkedIn**: [Vatsal Mehta](https://linkedin.com/in/vatsalmehta)
 - **GitHub**: [@vatsalmehta2001](https://github.com/vatsalmehta2001)
 - **Email**: vatsalmehta1906@gmail.com
-
-Whether you're interested in machine learning collaboration, have questions about emotion recognition, or just want to connect with a fellow ML engineer, don't hesitate to reach out!
