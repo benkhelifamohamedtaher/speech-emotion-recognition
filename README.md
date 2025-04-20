@@ -328,6 +328,17 @@ This project showcases an iterative approach to deep learning model development:
 
 Each iteration provided insights that informed the next development phase, ultimately leading to the best-performing model with a **50.5%** accuracy on this challenging 8-class task.
 
+## Future Development
+
+While the current Simplified Model achieves strong results at 50.5% accuracy, this represents an ongoing research effort rather than a final solution. Future work will focus on:
+
+- Exploring more advanced feature extraction techniques
+- Investigating multimodal approaches combining audio and text features
+- Testing larger transformer architectures with additional pretraining
+- Implementing continual learning methods to improve performance over time
+
+This repository will be regularly updated with newer and better models as research progresses.
+
 ## Training Your Own Model
 
 ```bash
@@ -353,10 +364,6 @@ bash train_optimal.sh
 - **Data Science**: NumPy, Matplotlib, scikit-learn
 - **Visualization**: TensorBoard, Matplotlib, Plotly
 - **Development Tools**: Git, Docker, Jupyter Notebooks
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Troubleshooting
 
