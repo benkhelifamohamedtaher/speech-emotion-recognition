@@ -6,9 +6,9 @@
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4%2B-orange.svg)](https://tensorflow.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-## 👤 About this Project
+## About this Project
 
-This portfolio project demonstrates my expertise in:
+This portfolio project demonstrates expertise in:
 
 - **Deep Learning Architecture Design**: Created multiple neural network architectures for audio processing
 - **Transfer Learning**: Leveraged Wav2Vec 2.0 pre-trained models for improved feature extraction
@@ -17,9 +17,9 @@ This portfolio project demonstrates my expertise in:
 - **PyTorch & TensorFlow**: Utilized both frameworks for model development and training
 - **Model Optimization**: Iteratively improved model performance from 29.7% to 50.5% accuracy
 
-This challenging project involves classifying speech into 8 distinct emotions. While commercial systems often focus on 3-4 emotions, my system achieves impressive results across all 8 emotion classes, outperforming random chance (12.5%) by 4× with **50.5% accuracy**.
+This challenging project involves classifying speech into 8 distinct emotions. While commercial systems often focus on 3-4 emotions, this system achieves impressive results across all 8 emotion classes, outperforming random chance (12.5%) by 4× with **50.5% accuracy**.
 
-## 🌟 Project Highlights
+## Project Highlights
 
 - Designed and implemented 4 different neural network architectures
 - Achieved 50.5% accuracy on 8-class emotion classification (4× better than random)
@@ -27,7 +27,7 @@ This challenging project involves classifying speech into 8 distinct emotions. W
 - Developed a custom dataset preprocessing pipeline for the RAVDESS dataset
 - Authored detailed documentation and visualization tools
 
-## 📊 Key Results
+## Key Results
 
 ![Confusion Matrix](docs/images/confusion_matrix.png)
 *Confusion matrix showing the model's performance across 8 emotion classes. Note the strong performance on Neutral (72%) and Calm (63%) emotions, with most confusion occurring between acoustically similar emotions like Happy/Surprised.*
@@ -72,42 +72,42 @@ Classification Report:
 weighted avg     0.52      0.51      0.50       320
 ```
 
-## 🔬 Model Evolution & Research Notebooks
+## Model Evolution & Research Notebooks
 
-This project features a comprehensive series of Jupyter notebooks documenting my iterative model development process:
+This project features a comprehensive series of Jupyter notebooks documenting the iterative model development process:
 
-### 📓 [Base Model (29.7% Accuracy)](docs/notebooks/04_Base_Model.ipynb)
-My initial CNN-based approach established a strong baseline with:
+### [Base Model (29.7% Accuracy)](docs/notebooks/04_Base_Model.ipynb)
+Initial CNN-based approach established a strong baseline with:
 - Convolutional layers for feature extraction from mel spectrograms
 - Recurrent neural networks (GRU) for temporal sequence modeling
 - Basic data augmentation techniques for improved generalization
 - Identified key challenges for speech emotion recognition
 
-### 📓 [Enhanced Model (31.5% Accuracy)](docs/notebooks/05_Enhanced_Model.ipynb)
-Building on the base model, I incorporated:
+### [Enhanced Model (31.5% Accuracy)](docs/notebooks/05_Enhanced_Model.ipynb)
+Building on the base model, incorporated:
 - Self-attention mechanisms to focus on emotionally salient parts of speech
 - Deeper convolutional blocks with residual connections
 - Improved regularization techniques including dropout and batch normalization
 - Advanced learning rate scheduling with cosine annealing
 
-### 📓 [Ultimate Model (33.3% Accuracy)](docs/notebooks/06_Ultimate_Model.ipynb)
-This complex architecture pushed the boundaries with:
+### [Ultimate Model (33.3% Accuracy)](docs/notebooks/06_Ultimate_Model.ipynb)
+Complex architecture that pushed the boundaries with:
 - Multi-modal feature extraction combining MFCCs, mel spectrograms, and spectral features
 - Full transformer architecture with multi-head self-attention
 - Squeeze-and-excitation blocks for channel-wise feature recalibration
 - Complex learning schedule with warmup and cosine annealing
 - 5-hour training time yielding only modest gains
 
-### 📓 [Simplified Model (50.5% Accuracy)](docs/notebooks/07_Simplified_Model.ipynb)
-My best-performing model proved that focused architectural design beats complexity:
+### [Simplified Model (50.5% Accuracy)](docs/notebooks/07_Simplified_Model.ipynb)
+Best-performing model proved that focused architectural design beats complexity:
 - Streamlined model with 4 transformer layers and 8 attention heads
 - Focused feature extraction with optimal dimensionality (256 features)
 - Robust error handling and training stability
 - 1-hour training time with **17.2% absolute improvement** over the Ultimate Model
 
-Each notebook contains comprehensive documentation, visualizations, and performance analyses to demonstrate my research process and technical insights.
+Each notebook contains comprehensive documentation, visualizations, and performance analyses that demonstrate the research process and technical insights.
 
-## 🎭 Emotions Recognized
+## Emotions Recognized
 
 The system can recognize the following 8 emotions from speech:
 
@@ -120,7 +120,7 @@ The system can recognize the following 8 emotions from speech:
 - Disgust
 - Surprised
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -133,7 +133,7 @@ cd speech-emotion-recognition
 pip install -r requirements.txt
 ```
 
-## 🎮 Real-time Emotion Recognition
+## Real-time Emotion Recognition
 
 ![GUI Application](docs/images/gui_screenshot.png)
 
@@ -169,7 +169,7 @@ chmod +x src/check_project.py
 python src/check_project.py
 ```
 
-## 📊 Dataset Processing
+## Dataset Processing
 
 This project uses the [RAVDESS dataset](https://zenodo.org/record/1188976) (Ryerson Audio-Visual Database of Emotional Speech and Song). Follow these steps precisely:
 
@@ -248,11 +248,11 @@ RAVDESS audio files follow this naming convention:
 - Repetition (01 = 1st repetition, 02 = 2nd repetition)
 - Actor (01 to 24. Odd-numbered actors are male, even-numbered actors are female)
 
-My processing script handles this naming convention automatically to extract emotions and organize files.
+The processing script handles this naming convention automatically to extract emotions and organize files.
 
 > **IMPORTANT**: The raw dataset (~25.6GB) and processed audio files are deliberately excluded from this repository due to their size. You must follow the steps above to prepare the dataset locally.
 
-## 💾 Model Files
+## Model Files
 
 Pre-trained models are not included in this repository due to their large size. After training your own models using the instructions below, they will be saved in the `models/` directory.
 
@@ -263,11 +263,11 @@ To use a specific model for inference:
 python src/inference.py --model_path models/ravdess_simple/best_model.pt
 ```
 
-## 💻 Technical Implementation
+## Technical Implementation
 
 ### Architecture Evolution
 
-My development process involved creating and refining several model architectures, each documented in detail through the project notebooks:
+The development process involved creating and refining several model architectures, each documented in detail through the project notebooks:
 
 1. **Base Model (29.7% accuracy)**
    - Convolutional layers for feature extraction
@@ -288,7 +288,7 @@ My development process involved creating and refining several model architecture
    - Resource-intensive but limited generalization
    - Detailed in [06_Ultimate_Model.ipynb](docs/notebooks/06_Ultimate_Model.ipynb)
 
-4. **Simplified Model (50.5% accuracy)** ✅
+4. **Simplified Model (50.5% accuracy)**
    - Focused architecture with 4 transformer layers
    - 8 attention heads with 256 feature dimensions
    - Robust error handling and training stability
@@ -315,9 +315,9 @@ Analyzing the confusion matrix revealed:
 
 These insights informed targeted improvements in the model architecture.
 
-## 📈 Model Development Journey
+## Model Development Journey
 
-This project showcases my iterative approach to deep learning model development:
+This project showcases an iterative approach to deep learning model development:
 
 1. **Initial Exploration**: Started with baseline CNN models and traditional audio features
 2. **Architecture Exploration**: Tested various neural network architectures (CNN, RNN, Transformer)
@@ -326,9 +326,9 @@ This project showcases my iterative approach to deep learning model development:
 5. **Error Analysis**: Identified common misclassifications and model weaknesses
 6. **Model Simplification**: Found that a focused, simplified architecture performed best
 
-Each iteration provided insights that informed the next development phase, ultimately leading to my best-performing model with a **50.5%** accuracy on this challenging 8-class task.
+Each iteration provided insights that informed the next development phase, ultimately leading to the best-performing model with a **50.5%** accuracy on this challenging 8-class task.
 
-## 🔧 Training Your Own Model
+## Training Your Own Model
 
 ```bash
 # Prepare RAVDESS dataset
@@ -345,7 +345,7 @@ python src/train_simplified.py \
 bash train_optimal.sh
 ```
 
-## 🛠️ Tools and Technologies
+## Tools and Technologies
 
 - **Languages**: Python 3.8+
 - **Deep Learning Frameworks**: PyTorch 1.7+, TensorFlow 2.4+
@@ -354,11 +354,11 @@ bash train_optimal.sh
 - **Visualization**: TensorBoard, Matplotlib, Plotly
 - **Development Tools**: Git, Docker, Jupyter Notebooks
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## ❓ Troubleshooting
+## Troubleshooting
 
 ### PyAudio Installation Issues
 
@@ -384,24 +384,24 @@ If the project doesn't seem to find certain files or directories:
 2. Check that all paths are correctly set relative to the project root
 3. Use `src/check_project.py` to verify the project structure
 
-## 🔗 References
+## References
 
 1. [RAVDESS Dataset](https://zenodo.org/record/1188976)
 2. [Wav2Vec 2.0 Paper](https://arxiv.org/abs/2006.11477)
 3. [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 4. [Speech Emotion Recognition: Literature Review](https://arxiv.org/abs/2107.09712)
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - The RAVDESS dataset creators for providing high-quality emotional speech data
 - The PyTorch and torchaudio teams for their excellent frameworks
 - The research community for advancing speech emotion recognition techniques
 
-## 📬 Contact & Connect
+## Contact & Connect
 
 - **LinkedIn**: [Vatsal Mehta](https://www.linkedin.com/in/vatsal-mehta-aa3a6219a/)
 - **GitHub**: [@vatsalmehta2001](https://github.com/vatsalmehta2001)
