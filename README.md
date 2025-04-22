@@ -8,7 +8,7 @@
 
 ## About this Project
 
-This project demonstrates expertise in:
+This project demonstrates:
 
 - **Deep Learning Architecture Design**: Created multiple neural network architectures for audio processing
 - **Transfer Learning**: Leveraged Wav2Vec 2.0 pre-trained models for improved feature extraction
